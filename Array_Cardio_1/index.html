@@ -77,13 +77,13 @@
       //  ==================
 
       /* let bornInFiftees = [];
-            for (let inventor of inventors) {
-              if (inventor.year >= 1500 && inventor.year < 1600) {
-                bornInFiftees.push(inventor);
+              for (let inventor of inventors) {
+                if (inventor.year >= 1500 && inventor.year < 1600) {
+                  bornInFiftees.push(inventor);
+                }
               }
-            }
-            console.table(bornInFiftees);
-            */
+              console.table(bornInFiftees);
+              */
 
       // using  Array.prototype.filter()
       // ===================================
@@ -113,8 +113,8 @@
       // console.table(inventorsList);
 
       /**********************************************************************************************************
-                          Sort the inventors by birthdate, oldest to youngest
-      ********************************************************************************************************/
+                            Sort the inventors by birthdate, oldest to youngest
+        ********************************************************************************************************/
       // using for loop
       //  ****************
       let min;
@@ -159,6 +159,26 @@
 
       //**************************************************************************************************/
       // 5. Sort the inventors by years lived
+
+      const sortByAge = (inventors) => {
+        let minAge;
+        for (let i = 0; i < inventors.length; i++) {
+          for (let j = i + 1; j < inventors.length; j++) {
+            if (
+              inventors[i].passed - inventors[i].year <
+              inventors[j].passed - inventors[j].year
+            ) {
+              minAge = inventors[i];
+              inventors[i] = inventors[j];
+              inventors[j] = minAge;
+            }
+          }
+        }
+        return inventors;
+      };
+      console.table(sortByAge(inventors));
+
+      //**************************************************************************************************/
 
       // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
       // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
