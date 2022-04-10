@@ -178,6 +178,18 @@
       };
       console.table(sortByAge(inventors));
 
+      // from min years lived to max years lived
+      const sortByYearsLived = inventors.sort(
+        (a, b) => a.passed - a.year - (b.passed - b.year)
+      );
+      console.table(sortByYearsLived);
+
+      // from max years lived to min years lived
+      const maxToMin = inventors.sort(
+        (a, b) => b.passed - b.year - (a.passed - a.year)
+      );
+      console.table(maxToMin);
+
       //**************************************************************************************************/
 
       // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
