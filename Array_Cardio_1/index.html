@@ -244,6 +244,18 @@
         "car",
         "truck",
       ];
+
+      const instance = data.reduce((obj, element) => {
+        if (!obj[element]) {
+          obj[element] = 1;
+        } else {
+          obj[element]++;
+        }
+        return obj;
+      }, {});
+
+      console.log(instance);
+
       const countOf = (data) => {
         const countObject = {};
         for (let elem of data) {
@@ -251,7 +263,7 @@
         }
         return countObject;
       };
-      
+
       console.log(countOf(data));
     </script>
   </body>
