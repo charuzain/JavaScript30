@@ -7,264 +7,313 @@
   <body>
     <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
     <script>
-      // Get your shorts on - this is an array workout!
-      // ## Array Cardio Day 1
+            /* Get your shorts on - this is an array workout!
+            ****************************************************
+                      Array Cardio Day 1
+            ******************************************************/
 
-      const inventors = [
-        { first: "Albert", last: "Einstein", year: 1879, passed: 1955 },
-        { first: "Isaac", last: "Newton", year: 1643, passed: 1727 },
-        { first: "Galileo", last: "Galilei", year: 1564, passed: 1642 },
-        { first: "Marie", last: "Curie", year: 1867, passed: 1934 },
-        { first: "Johannes", last: "Kepler", year: 1571, passed: 1630 },
-        { first: "Nicolaus", last: "Copernicus", year: 1473, passed: 1543 },
-        { first: "Max", last: "Planck", year: 1858, passed: 1947 },
-        { first: "Katherine", last: "Blodgett", year: 1898, passed: 1979 },
-        { first: "Ada", last: "Lovelace", year: 1815, passed: 1852 },
-        { first: "Sarah E.", last: "Goode", year: 1855, passed: 1905 },
-        { first: "Lise", last: "Meitner", year: 1878, passed: 1968 },
-        { first: "Hanna", last: "Hammarström", year: 1829, passed: 1909 },
-      ];
+            const inventors = [
+              { first: "Albert", last: "Einstein", year: 1879, passed: 1955 },
+              { first: "Isaac", last: "Newton", year: 1643, passed: 1727 },
+              { first: "Galileo", last: "Galilei", year: 1564, passed: 1642 },
+              { first: "Marie", last: "Curie", year: 1867, passed: 1934 },
+              { first: "Johannes", last: "Kepler", year: 1571, passed: 1630 },
+              { first: "Nicolaus", last: "Copernicus", year: 1473, passed: 1543 },
+              { first: "Max", last: "Planck", year: 1858, passed: 1947 },
+              { first: "Katherine", last: "Blodgett", year: 1898, passed: 1979 },
+              { first: "Ada", last: "Lovelace", year: 1815, passed: 1852 },
+              { first: "Sarah E.", last: "Goode", year: 1855, passed: 1905 },
+              { first: "Lise", last: "Meitner", year: 1878, passed: 1968 },
+              { first: "Hanna", last: "Hammarström", year: 1829, passed: 1909 },
+            ];
 
-      const people = [
-        "Bernhard, Sandra",
-        "Bethea, Erin",
-        "Becker, Carl",
-        "Bentsen, Lloyd",
-        "Beckett, Samuel",
-        "Blake, William",
-        "Berger, Ric",
-        "Beddoes, Mick",
-        "Beethoven, Ludwig",
-        "Belloc, Hilaire",
-        "Begin, Menachem",
-        "Bellow, Saul",
-        "Benchley, Robert",
-        "Blair, Robert",
-        "Benenson, Peter",
-        "Benjamin, Walter",
-        "Berlin, Irving",
-        "Benn, Tony",
-        "Benson, Leana",
-        "Bent, Silas",
-        "Berle, Milton",
-        "Berry, Halle",
-        "Biko, Steve",
-        "Beck, Glenn",
-        "Bergman, Ingmar",
-        "Black, Elk",
-        "Berio, Luciano",
-        "Berne, Eric",
-        "Berra, Yogi",
-        "Berry, Wendell",
-        "Bevan, Aneurin",
-        "Ben-Gurion, David",
-        "Bevel, Ken",
-        "Biden, Joseph",
-        "Bennington, Chester",
-        "Bierce, Ambrose",
-        "Billings, Josh",
-        "Birrell, Augustine",
-        "Blair, Tony",
-        "Beecher, Henry",
-        "Biondo, Frank",
-      ];
+            const people = [
+              "Bernhard, Sandra",
+              "Bethea, Erin",
+              "Becker, Carl",
+              "Bentsen, Lloyd",
+              "Beckett, Samuel",
+              "Blake, William",
+              "Berger, Ric",
+              "Beddoes, Mick",
+              "Beethoven, Ludwig",
+              "Belloc, Hilaire",
+              "Begin, Menachem",
+              "Bellow, Saul",
+              "Benchley, Robert",
+              "Blair, Robert",
+              "Benenson, Peter",
+              "Benjamin, Walter",
+              "Berlin, Irving",
+              "Benn, Tony",
+              "Benson, Leana",
+              "Bent, Silas",
+              "Berle, Milton",
+              "Berry, Halle",
+              "Biko, Steve",
+              "Beck, Glenn",
+              "Bergman, Ingmar",
+              "Black, Elk",
+              "Berio, Luciano",
+              "Berne, Eric",
+              "Berra, Yogi",
+              "Berry, Wendell",
+              "Bevan, Aneurin",
+              "Ben-Gurion, David",
+              "Bevel, Ken",
+              "Biden, Joseph",
+              "Bennington, Chester",
+              "Bierce, Ambrose",
+              "Billings, Josh",
+              "Birrell, Augustine",
+              "Blair, Tony",
+              "Beecher, Henry",
+              "Biondo, Frank",
+            ];
+/***************************************************************************************************************************
+                        Filter the list of inventors for those who were born in the 1500's
+****************************************************************************************************************************/
 
-      // **********************************************************************************************************
+/*====================================
+             USING FOR LOOP
+ =====================================*/
 
-      // 1. Filter the list of inventors for those who were born in the 1500's
-
-      //  using for loop
-      //  ==================
-
-      /* let bornInFiftees = [];
+            const inventorsBornInFiftees = (inventors) => {
+              const fifteesBorn = [];
               for (let inventor of inventors) {
                 if (inventor.year >= 1500 && inventor.year < 1600) {
-                  bornInFiftees.push(inventor);
+                  fifteesBorn.push(inventor);
                 }
               }
-              console.table(bornInFiftees);
-              */
+              return fifteesBorn;
+            };
 
-      // using  Array.prototype.filter()
-      // ===================================
+            console.table(inventorsBornInFiftees(inventors));
 
-      const bornInFiftees = inventors.filter(
-        (inventor) => inventor.year >= 1500 && inventor.year < 1600
-      );
-      // console.table(bornInFiftees);
+/*===============================================
+            USING Array.prototype.filter()
+================================================*/
 
-      /*************************************************************************************************************/
-      //  2. Give us an array of the inventors first and last names
+            const bornInFiftees = inventors.filter(
+              (inventor) => inventor.year >= 1500 && inventor.year < 1600
+            );
+            console.table(bornInFiftees);
 
-      // using for loop
-      // ****************
-      let inventorsName = [];
-      for (let inventor of inventors) {
-        inventorsName.push(`${inventor.first} ${inventor.last}`);
-      }
-      console.table(inventorsName);
+/***************************************************************************************************************************
+                      Give us an array of the inventors first and last names
+****************************************************************************************************************************/
 
-      // using  Array.prototype.map()
-      // *****************************
+/*====================================
+             USING FOR LOOP
+=====================================*/
 
-      const inventorsList = inventors.map(
-        (inventor) => `${inventor.first} ${inventor.last}`
-      );
-      // console.table(inventorsList);
+            const name = (inventors) => {
+              const inventorsName = [];
+              for (let inventor of inventors) {
+                inventorsName.push(`${inventor.first} ${inventor.last}`);
+              }
+              return inventorsName;
+            };
 
-      /**********************************************************************************************************
+            console.table(name(inventors));
+              
+/*==================================================
+            USING Array.prototype.filter()
+====================================================*/
+
+            const inventorsList = inventors.map(
+              (inventor) => `${inventor.first} ${inventor.last}`
+            );
+
+            console.table(inventorsList);
+
+/****************************************************************************************************************************
                             Sort the inventors by birthdate, oldest to youngest
-        ********************************************************************************************************/
-      // using for loop
-      //  ****************
-      let min;
-      for (let i = 0; i < inventors.length; i++) {
-        for (let j = i + 1; j < inventors.length; j++) {
-          if (inventors[i].year > inventors[j].year) {
-            min = inventors[i];
-            inventors[i] = inventors[j];
-            inventors[j] = min;
-          }
-        }
-      }
-      console.table([inventors]);
+ ****************************************************************************************************************************/
 
-      // using  Array.prototype.sort()
-      // *****************************
+/*==========================================
+             USING FOR LOOP
+ ============================================*/
+            const sortByBirthdate = (inventors) => {
+              let min;
+              for (let i = 0; i < inventors.length; i++) {
+                for (let j = i + 1; j < inventors.length; j++) {
+                  if (inventors[i].year > inventors[j].year) {
+                    min = inventors[i];
+                    inventors[i] = inventors[j];
+                    inventors[j] = min;
+                  }
+                }
+              }
+              return inventors;
+            };
+            console.table(sortByBirthdate(inventors));
 
-      const oldest = inventors.sort((a, b) => a.year - b.year);
-      console.table([oldest]);
-      // ***************************************************************************************************************/
+/*====================================================
+            USING Array.prototype.sort()
+=======================================================*/
 
-      // 4. How many years did all the inventors live all together?
+            const oldest = inventors.sort((a, b) => a.year - b.year);
 
-      // using for loop
-      const totalYearsLived = (inventors) => {
-        let totalAge = 0;
-        for (let inventor of inventors) {
-          const yearsLived = inventor.passed - inventor.year;
-          totalAge += yearsLived;
-        }
-        return totalAge;
-      };
-      console.log(totalYearsLived(inventors));
+            console.table(oldest);
 
-      // Using Array.prototype.reduce()
+/****************************************************************************************************************************
+                         How many years did all the inventors live all together?
+****************************************************************************************************************************/
 
-      const totalYears = inventors.reduce(
-        (total, inventor) => total + (inventor.passed - inventor.year),
-        0
-      );
-      console.log(totalYears);
+/*==============================================
+             USING FOR LOOP
+================================================*/
 
-      //**************************************************************************************************/
-      // 5. Sort the inventors by years lived
+            const totalYearsLived = (inventors) => {
+              let totalAge = 0;
+              for (let inventor of inventors) {
+                const yearsLived = inventor.passed - inventor.year;
+                totalAge += yearsLived;
+              }
+              return totalAge;
+            };
+            console.log(totalYearsLived(inventors));
 
-      const sortByAge = (inventors) => {
-        let minAge;
-        for (let i = 0; i < inventors.length; i++) {
-          for (let j = i + 1; j < inventors.length; j++) {
-            if (
-              inventors[i].passed - inventors[i].year <
-              inventors[j].passed - inventors[j].year
-            ) {
-              minAge = inventors[i];
-              inventors[i] = inventors[j];
-              inventors[j] = minAge;
-            }
-          }
-        }
-        return inventors;
-      };
-      console.table(sortByAge(inventors));
+/*=================================================================
+            USING Array.prototype.reduce()
+===================================================================*/
 
-      // from min years lived to max years lived
-      const sortByYearsLived = inventors.sort(
-        (a, b) => a.passed - a.year - (b.passed - b.year)
-      );
-      console.table(sortByYearsLived);
+            const totalYears = inventors.reduce(
+              (total, inventor) => total + (inventor.passed - inventor.year),
+              0
+            );
+            console.log(totalYears);
 
-      // from max years lived to min years lived
-      const maxToMin = inventors.sort(
-        (a, b) => b.passed - b.year - (a.passed - a.year)
-      );
-      console.table(maxToMin);
+/****************************************************************************************************************************
+                               Sort the inventors by years lived
+****************************************************************************************************************************/
 
-      //**************************************************************************************************/
+/*==================================================
+             USING FOR LOOP
+====================================================*/
 
-      // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
-      // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+            const sortByAge = (inventors) => {
+              let minAge;
+              for (let i = 0; i < inventors.length; i++) {
+                for (let j = i + 1; j < inventors.length; j++) {
+                  if (
+                    inventors[i].passed - inventors[i].year <
+                    inventors[j].passed - inventors[j].year
+                  ) {
+                    minAge = inventors[i];
+                    inventors[i] = inventors[j];
+                    inventors[j] = minAge;
+                  }
+                }
+              }
+              return inventors;
+            };
+            console.table(sortByAge(inventors));
 
-      const arrayList = document.querySelectorAll(".mw-category-group li");
+/*=================================================================
+            USING Array.prototype.sort()
+==================================================================*/
 
-      const listOfBoulevards = (arrayList) => {
-        let filteredList = [];
-        let string;
-        for (let i = 0; i < arrayList.length; i++) {
-          string = arrayList[i].textContent;
-          if (string.includes("de")) {
-            filteredList.push(string);
-          }
-        }
-        return filteredList;
-      };
-      console.log(listOfBoulevards(arrayList));
-      // **************************************************************************************************/
+      /*   From min years lived to max years lived   */
+            const sortByYearsLived = inventors.sort(
+              (a, b) => a.passed - a.year - (b.passed - b.year)
+            );
+            console.table(sortByYearsLived);
 
-      // 7. sort Exercise
-      // Sort the people alphabetically by last name
-      const sortedPeople = (people) => {
-        const sortedArray = people.sort((a, b) => {
-          if (a.split(",")[1].toLowerCase() > b.split(",")[1].toLowerCase()) {
-            return 1;
-          } else {
-            return -1;
-          }
-        });
-        return sortedArray;
-      };
-      console.log(sortedPeople(people));
-      //**************************************************************************************************/
+      /*   From max years lived to min years lived   */
+            const maxToMin = inventors.sort(
+              (a, b) => b.passed - b.year - (a.passed - a.year)
+            );
+            console.table(maxToMin);
 
-      // 8. Reduce Exercise
-      // Sum up the instances of each of these
-      const data = [
-        "car",
-        "car",
-        "truck",
-        "truck",
-        "bike",
-        "walk",
-        "car",
-        "van",
-        "bike",
-        "walk",
-        "car",
-        "van",
-        "car",
-        "truck",
-      ];
+ /***************************************************************************************************************************
+          Create a list of Boulevards in Paris that contain 'de' anywhere in the name
+            // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+****************************************************************************************************************************/
 
-      const instance = data.reduce((obj, element) => {
-        if (!obj[element]) {
-          obj[element] = 1;
-        } else {
-          obj[element]++;
-        }
-        return obj;
-      }, {});
+            const arrayList = document.querySelectorAll(".mw-category-group li");
 
-      console.log(instance);
+            const listOfBoulevards = (arrayList) => {
+              let filteredList = [];
+              let string;
+              for (let i = 0; i < arrayList.length; i++) {
+                string = arrayList[i].textContent;
+                if (string.includes("de")) {
+                  filteredList.push(string);
+                }
+              }
+              return filteredList;
+            };
+            console.log(listOfBoulevards(arrayList));
+            
+/****************************************************************************************************************************
+            Sort Exercise
+            Sort the people alphabetically by last name
+****************************************************************************************************************************/
 
-      const countOf = (data) => {
-        const countObject = {};
-        for (let elem of data) {
-          !countObject[elem] ? (countObject[elem] = 1) : countObject[elem]++;
-        }
-        return countObject;
-      };
+            const sortedPeople = (people) => {
+              const sortedArray = people.sort((a, b) => {
+                if (a.split(",")[1].toLowerCase() > b.split(",")[1].toLowerCase()) {
+                  return 1;
+                } else {
+                  return -1;
+                }
+              });
+              return sortedArray;
+            };
+            console.log(sortedPeople(people));
+            
+/****************************************************************************************************************************
+                Reduce Exercise
+                Sum up the instances of each of these
+****************************************************************************************************************************/
+            const data = [
+              "car",
+              "car",
+              "truck",
+              "truck",
+              "bike",
+              "walk",
+              "car",
+              "van",
+              "bike",
+              "walk",
+              "car",
+              "van",
+              "car",
+              "truck",
+            ];
+/*========================================================
+            USING Array.prototype.reduce()
+==========================================================*/
 
-      console.log(countOf(data));
+            const instance = data.reduce((obj, element) => {
+              if (!obj[element]) {
+                obj[element] = 1;
+              } else {
+                obj[element]++;
+              }
+              return obj;
+            }, {});
+
+            console.log(instance);
+
+/*==================================================
+             USING FOR LOOP
+====================================================*/
+
+            const countOf = (data) => {
+              const countObject = {};
+              for (let elem of data) {
+                !countObject[elem] ? (countObject[elem] = 1) : countObject[elem]++;
+              }
+              return countObject;
+            };
+
+            console.log(countOf(data));
+
+/**************************************************************************************************************************/
     </script>
   </body>
 </html>
