@@ -199,15 +199,16 @@
 
       const listOfBoulevards = (arrayList) => {
         let filteredList = [];
+        let string;
         for (let i = 0; i < arrayList.length; i++) {
-          let string = arrayList[i].textContent;
+          string = arrayList[i].textContent;
           if (string.includes("de")) {
             filteredList.push(string);
           }
         }
         return filteredList;
       };
-      console.log(listOfBoulevards(arrayList))
+      console.log(listOfBoulevards(arrayList));
       // **************************************************************************************************/
 
       // 7. sort Exercise
@@ -243,6 +244,15 @@
         "car",
         "truck",
       ];
+      const countOf = (data) => {
+        const countObject = {};
+        for (let elem of data) {
+          !countObject[elem] ? (countObject[elem] = 1) : countObject[elem]++;
+        }
+        return countObject;
+      };
+      
+      console.log(countOf(data));
     </script>
   </body>
 </html>
